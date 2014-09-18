@@ -1,5 +1,6 @@
 var evs = require( 'event-stream' );
 var _ = require( 'lodash' );
+var through = require( 'through2' );
 var builtPatterns = [];
 
 function buildRegex( templates, prefix ) {
@@ -24,8 +25,8 @@ module.exports = function( opt ) {
 
 	buildRegex( options.patterns, options.prefix );
 
-	function prefixAllTheThings( file ) {
-		var contents = String( file.contents );
+	function prefixAllTheThings( file, enc, cb ) {
+		var contents = String( file._contents );
 
 		builtPatterns.forEach( function( pattern ) {
 			contents = contents.replace(
@@ -34,10 +35,9 @@ module.exports = function( opt ) {
 			);
 		} );
 
-		file.contents = new Buffer( contents );
-
-		this.emit( 'data', file );
+		file._contents = new Buffer( contents );
+		cb( null, file );
 	}
 
-	return evs.through( prefixAllTheThings );
+	return through.obj( prefixAllTheThings, function( cb ) { cb( null ); } );
 };
