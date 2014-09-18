@@ -1,0 +1,53 @@
+{
+  "name": "gulp-path-prefix",
+  "version": "0.0.1",
+  "description": "Gulp plugin for prefixing paths to assets",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/LeanKit-Labs/gulp-path-prefix.git"
+  },
+  "keywords": [
+    "gulp",
+    "plugin",
+    "gulp plugin",
+    "gulpplugin",
+    "path",
+    "prefix"
+  ],
+  "author": "Jim Cowart (http://freshbrewedcode.com/jimcowart)",
+  "contributors": [
+    {
+      "name": "Jim Cowart",
+      "email": "WhyNotJustComment@OnMyBlog.com",
+      "url": "http://ifandelse.com"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/LeanKit-Labs/gulp-path-prefix/issues"
+  },
+  "homepage": "https://github.com/LeanKit-Labs/gulp-path-prefix",
+  "devDependencies": {
+    "gulp": "~3.3.1",
+    "gulp-prettify": "^0.3.0",
+    "should": "~2.1.1"
+  },
+  "dependencies": {
+    "event-stream": "~3.1.0",
+    "gulp-util": "~2.2.9",
+    "lodash": "^2.4.1"
+  },
+  "directories": {
+    "spec": "spec"
+  },
+  "readmeFilename": "README.md"
+}
