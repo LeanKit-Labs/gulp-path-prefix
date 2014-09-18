@@ -18,12 +18,17 @@
     "path",
     "prefix"
   ],
-  "author": "Jim Cowart (http://freshbrewedcode.com/jimcowart)",
+  "author": "Jim Cowart (http://ifandelse.com)",
   "contributors": [
     {
       "name": "Jim Cowart",
       "email": "WhyNotJustComment@OnMyBlog.com",
       "url": "http://ifandelse.com"
+    },
+    {
+      "name": "Alex Robson",
+      "email": "WhyNotJustNotComment@OnMyBlog.com",
+      "url": "http://nerdventure.io"
     }
   ],
   "licenses": [
