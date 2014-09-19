@@ -7,7 +7,6 @@ function buildRegex( templates, prefix ) {
 	builtPatterns = templates.map( function( template ) {
 
 		var patt = template.replace( "$PREFIX$", prefix );
-		console.log( patt );
 		return new RegExp( patt, "gm" );
 	} );
 }
@@ -26,7 +25,7 @@ module.exports = function( opt ) {
 	buildRegex( options.patterns, options.prefix );
 
 	function prefixAllTheThings( file, enc, cb ) {
-		if( file._contents !== null ) {
+		if ( file._contents !== null ) {
 			var contents = String( file._contents );
 
 			builtPatterns.forEach( function( pattern ) {
@@ -40,8 +39,10 @@ module.exports = function( opt ) {
 			cb( null, file );
 		} else {
 			cb();
-		}		
+		}
 	}
 
-	return through.obj( prefixAllTheThings, function( cb ) { cb( null ); } );
+	return through.obj( prefixAllTheThings, function( cb ) {
+		cb( null );
+	} );
 };
