@@ -26,17 +26,21 @@ module.exports = function( opt ) {
 	buildRegex( options.patterns, options.prefix );
 
 	function prefixAllTheThings( file, enc, cb ) {
-		var contents = String( file._contents );
+		if( file._contents !== null ) {
+			var contents = String( file._contents );
 
-		builtPatterns.forEach( function( pattern ) {
-			contents = contents.replace(
-				pattern,
-				"$1" + options.prefix + "$2$3"
-			);
-		} );
+			builtPatterns.forEach( function( pattern ) {
+				contents = contents.replace(
+					pattern,
+					"$1" + options.prefix + "$2$3"
+				);
+			} );
 
-		file._contents = new Buffer( contents );
-		cb( null, file );
+			file._contents = new Buffer( contents );
+			cb( null, file );
+		} else {
+			cb();
+		}		
 	}
 
 	return through.obj( prefixAllTheThings, function( cb ) { cb( null ); } );
