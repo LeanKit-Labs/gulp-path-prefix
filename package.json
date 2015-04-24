@@ -1,6 +1,6 @@
 {
   "name": "gulp-path-prefix",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Gulp plugin for prefixing paths to assets",
   "main": "index.js",
   "scripts": {
@@ -47,9 +47,8 @@
     "should": "~2.1.1"
   },
   "dependencies": {
-    "event-stream": "~3.1.0",
     "gulp-util": "~2.2.9",
-    "lodash": "^2.4.1",
+    "lodash.assign": "^3.1.0",
     "through2": "^0.6.1"
   },
   "directories": {
