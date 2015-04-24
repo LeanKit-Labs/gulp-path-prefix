@@ -1,5 +1,4 @@
-var evs = require( 'event-stream' );
-var _ = require( 'lodash' );
+var extend = require( 'lodash.assign' );
 var through = require( 'through2' );
 var builtPatterns = [];
 
@@ -12,7 +11,7 @@ function buildRegex( templates, prefix ) {
 }
 
 module.exports = function( opt ) {
-	var options = _.extend( {
+	var options = extend( {
 		patterns: [
 			"(React.DOM.img\\((?:.|[\\n\\r])*src:\\s*['\"](?!$PREFIX$))(\\/.*)(['\"])",
 			"(<img.*src=['\"](?!$PREFIX$))(\\/.*)(['\"].*>)",
